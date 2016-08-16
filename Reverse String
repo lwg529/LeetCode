@@ -1,0 +1,10 @@
+//charAt() 方法可返回指定位置的字符。
+var reverseString = function(s) {
+    var temp="";
+    var len=s.length-1;
+    for(i=len;i>=0;i--)
+    {
+        temp += s.charAt(i); 
+    }
+    return temp;
+};
