@@ -1,0 +1,45 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var majorityElement = function(nums) {
+    var a,b,countA=0,countB=0;
+    for(var i=0,len=nums.length;i<len;i++){
+        if(nums[i]==a){
+            countA++;
+        }else if(nums[i]==b){
+            countB++;
+        }else if(countA==0){
+            countA=1;
+            a=nums[i];
+        }else if(countB==0){
+            countB=1;
+            b=nums[i]
+        }else{
+            countA--;
+            countB--;
+        }
+    }
+
+    countA=0;
+    countB=0;
+    for(var i=0,len=nums.length;i<len;i++){
+        if(nums[i]==a){
+            countA++;
+        }
+        if(nums[i]==b){
+            countB++;
+        }
+    }
+
+    var res;
+    if(countA>Math.floor(len/2)){
+        res=a;
+    }
+    if(countB>Math.floor(len/2)){
+        res=b;
+    }
+
+    return res;
+
+};
