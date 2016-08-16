@@ -1,0 +1,8 @@
+var getSum = function(a, b) {
+    while(b){
+    var tmp=a&b;
+    a=a^b;
+    b=tmp<<1;
+    }
+    return a;
+};
