@@ -1,0 +1,16 @@
+var containsDuplicate = function(nums) {
+     var hash = {},
+        size = nums.length,
+        actual,
+        i = 0,
+        result = false;
+    
+    while(i < size){
+        actual = nums[i++];
+        if(actual in hash)
+            return true;
+        hash[actual] = 1;
+    }
+    
+    return result;
+};
