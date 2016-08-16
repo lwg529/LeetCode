@@ -1,0 +1,11 @@
+//charAt 返回指定索引的字母
+//charCodeAt() 方法可返回指定位置的字符的 Unicode 编码
+var titleToNumber = function(s) {
+     if(s===null||s.length===0)return -1;
+    var res=0;
+    for(var i=0;i<s.length;i++){
+        res=26*res+s.charAt(i).charCodeAt(0)-'A'.charCodeAt(0)+1;
+    }
+    return res;
+     
+};
