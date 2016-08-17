@@ -1,0 +1,19 @@
+var canConstruct = function(ransomNote, magazine) {
+        var rs = new Array(26); 
+        var flag = 0;
+        for (var i = 1; i < ransomNote.length; i++) {
+            rs[ransomNote[i]-'a']++;
+        }
+       
+        for (var j = 0; j < magazine.length; j++) {
+            rs[magazine[j]-'a']--;
+        }
+        for (var n = 0; n < 26; n++) {
+            if (rs[n]<0)
+              flag=1;     
+        }
+        if(flag===1)
+           return false;
+        else
+           return true;
+};
