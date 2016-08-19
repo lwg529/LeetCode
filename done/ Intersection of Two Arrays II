@@ -1,0 +1,26 @@
+var intersect = function(nums1, nums2) {
+    nums1.sort(function (a,b){  //首先对数组降序排列，注意js中sort是按照编码排序的
+        return a-b;
+    });
+     nums2.sort(function (a,b){
+        return a-b;
+    });
+    var pt1=0;
+    var pt2=0;
+    var res = [];
+    if(nums1.length===0||nums2.length===0)
+    return res; //任何一个为空，则返回空
+    while( (pt1<nums1.length) && (pt2<nums2.length) ){
+        if (nums1[pt1]> nums2[pt2])
+             pt2 += 1;
+        else if (nums1[pt1] < nums2[pt2])
+             pt1 += 1;
+        else
+           { res.push(nums1[pt1]);
+            pt1 += 1;
+            pt2 += 1;
+           }
+    }
+        return res;
+    
+};
