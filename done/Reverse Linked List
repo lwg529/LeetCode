@@ -1,0 +1,15 @@
+var reverseList = function(head) {
+    if(head===null||head.next===null)//如果是空链表或者只有一个节点，直接返回
+    return head;
+    var p;
+    var q;
+    p=head.next;
+    head.next=null;
+    while(p){
+    q=p.next;
+    p.next=head;
+    head=p;
+    p=q;
+   }
+  return head;
+};
