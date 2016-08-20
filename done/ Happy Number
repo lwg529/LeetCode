@@ -1,0 +1,29 @@
+var isHappy = function(n) {
+ if (n == 1){
+		return true;//如果是1，直接返回true
+	}
+    function doLoop(num) {
+		var num_str = num.toString();
+		var sum = 0;
+		for (var i = 0; i < num_str.length; i++){
+			sum += num_str[i] * num_str[i]; 
+		}
+		return sum;  //数字转化为字符串，每位平方相加
+	}
+	var results = new Array();
+	while (true) {
+		var res = doLoop(n); //调用一次各位平方求和
+		for (var i = 0; i < results.length; i++){
+			if (results[i] == res){ //如果存在重复，则进入死循环，返回false
+				return false;
+			}
+		}
+		results.push(res);
+		for (var j = 0; j < results.length; j++){
+			if (results[j] == 1){
+				return true;
+			}
+		}
+		var n = res;//重设初始值
+	}
+};
