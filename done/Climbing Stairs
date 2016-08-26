@@ -1,0 +1,43 @@
+//爬楼梯就是裴波那契数列
+var climbStairs = function(n) {
+    var  a = 0;
+    var  b = 1;
+    var sum = 0;
+    for(var i = 1; i <= n; i++){
+        sum = a + b;
+        a = b;
+        b = sum;
+    }
+  return sum;
+};
+
+
+//递归的解法，会出现问题
+public static int climbStairs(int n) {
+   if(n == 1)
+     return 1;
+  if(n == 2)
+    return 2;
+ return climbStairs(n - 1) + climbStairs(n - 2);
+}
+
+//最直接的想法
+var climbStairs = function(n) {
+    if(n <= 2)  
+        {  
+            return n;  
+        }  
+        else  
+        {  
+            var step = new Array(n);  
+              
+            step[0] = 1;  
+            step[1] = 2;  
+              
+            for(var i = 2; i < n; i++)  
+            {  
+                step[i] = step[i-1] + step[i-2];  
+            }  
+            return step[n-1];  
+        }     
+};
