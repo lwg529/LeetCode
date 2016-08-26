@@ -1,0 +1,29 @@
+var maxProfit = function(prices) {
+    if (prices.length=== 0)
+            return 0;
+       var maxPrice = prices[prices.length-1];
+       var ans = 0;
+        for(var i = prices.length - 1; i >= 0; i--)
+        {
+            maxPrice =Math.max(maxPrice, prices[i]);//求出目前为止最高的价格
+            ans =Math.max(ans, maxPrice - prices[i]);//比较目前的差价和新的差价，选出较大的那个
+        }
+        return ans;
+};
+
+//动态规划法
+public class Solution {
+    public int maxProfit(int[] prices) {
+        if (prices.length < 2) return 0;
+        
+        int maxProfit = 0;
+        int curMin = prices[0];
+        
+        for (int i = 1; i < prices.length; i++) {
+            curMin = Math.min(curMin, prices[i]);//保存出现的最低的价格
+            maxProfit = Math.max(maxProfit, prices[i] - curMin);//选出最大收益的一天
+        }
+        
+        return maxProfit;
+    }
+}
