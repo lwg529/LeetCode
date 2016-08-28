@@ -1,0 +1,16 @@
+var countBits = function(num) {
+   var A=[];
+   A[0]=0;
+   var P=1;
+    for(var i=1;i<=num;i++){
+     if(i===P){
+      A[i]=1;
+      P=P*2;
+   }
+    else if(i<P ){
+    var rem=i-P/2;
+    A[i]=A[rem]+1;
+  }
+ }
+  return A;
+};
