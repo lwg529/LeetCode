@@ -1,0 +1,18 @@
+#include <iostream>
+#include <math.h>
+#include <stdio.h>
+using namespace std;
+int a[100];
+const int INF = 522133279;
+int main()    
+{       int x=0;
+    while ( ~scanf("%d", &a[x++]) );
+    int ans = -INF;
+    for ( int i = 0; i < x; i++ )
+        for ( int j = i + 1; j < x; j++ )
+        {
+            ans = max(ans, a[j]-a[i] );
+        }
+    cout << ans << endl;     
+    return 0;  
+}  
