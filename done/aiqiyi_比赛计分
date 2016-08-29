@@ -1,0 +1,24 @@
+#include <iostream>
+#include <math.h>
+#include <stdio.h>
+#include <algorithm>
+using namespace std;
+int main( )
+{
+
+    int m[7];
+    while ( cin >> m[0] )
+    {
+        for ( int i = 1; i < 7; i++ )
+            cin >> m[i];
+        sort( m, m + 7 );
+        int ans = 0;
+        for ( int i = 1; i < 6; i++ )
+        {
+            ans += m[i];
+        }
+
+        printf( "%.1lf\n", ans/5.0 );
+    }
+    return 0;
+}
