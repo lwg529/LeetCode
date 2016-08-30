@@ -1,0 +1,23 @@
+class Solution {
+public:
+Solution(vector<int> nums) {
+srand(time(NULL));
+curr=nums;
+}
+
+vector<int> reset() {
+    return curr;
+}
+
+vector<int> shuffle() {
+    vector<int> ret = curr;
+    for(int size=curr.size();size>1;size--){
+        int randIndex = rand() % size;
+        swap(ret[randIndex], ret[size-1]);
+    }
+    return ret;
+}
+
+private:
+vector<int> curr;
+}; 
