@@ -1,7 +1,31 @@
 class Solution {
+   public:
+   Solution(ListNode* head) {
+    h = head;
+  }
+
+/** Returns a random node's value. */
+   int getRandom() {
+    int rd = 1;
+    ListNode* tmp = h;
+    ListNode* res = NULL;
+    while(tmp){
+        if(rand()%rd==0)
+            res = tmp;
+            tmp = tmp->next;
+            rd++;
+    }
+    return res->val;
+}
+private:
+ListNode* h;
+};
+//生成循环链表
+class Solution {
 public:
-    /** @param head The linked list's head.
-        Note that the head is guaranteed to be not null, so it contains at least one node. */
+    ListNode* head_;
+    ListNode* cur_;
+    int len = 1;
     Solution(ListNode* head) {
         head_ = head;
         cur_ = head;
